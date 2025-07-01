@@ -1,0 +1,251 @@
+:root {
+  --navbar-bg: #23272b;
+  --header-bg: #23272b;
+  --header-text: #fff;
+  --table-header-bg: #23272b;
+  --table-header-text: #fff;
+  --table-row-bg: #fff;
+  --table-row-border: #e0e0e0;
+  --edit-btn: #17a2b8;
+  --edit-btn-hover: #138496;
+  --delete-btn: #dc3545;
+  --delete-btn-hover: #a71d2a;
+  --save-btn: #28a745;
+  --save-btn-hover: #218838;
+  --input-border: #ccc;
+  --input-bg: #fff;
+  --radius: 6px;
+  --text: #222;
+  --label: #222;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+}
+
+nav {
+  background: var(--navbar-bg);
+  padding: 0.7rem 0;
+  color: #fff;
+  margin-bottom: 2rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.navbar-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 0 1.5rem;
+}
+.navbar-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 2rem;
+}
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 1.5rem;
+  transition: color 0.2s;
+}
+.navbar-links a.active, .navbar-links a:hover {
+  color: #17a2b8;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 0 0 8px 8px;
+  border: none;
+}
+
+h2, .form-title {
+  margin-top: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--table-row-bg);
+  margin-top: 1rem;
+  border-radius: 6px;
+  overflow: hidden;
+}
+th, td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--table-row-border);
+  text-align: left;
+  font-size: 1rem;
+}
+th {
+  background: var(--table-header-bg);
+  color: var(--table-header-text);
+  font-weight: 600;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+tr {
+  background: var(--table-row-bg);
+}
+
+/* Botones de acción */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+.button-edit {
+  background: var(--edit-btn);
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  border-radius: var(--radius);
+  padding: 0.35rem 1.1rem;
+  transition: background 0.2s;
+}
+.button-edit:hover {
+  background: var(--edit-btn-hover);
+}
+.button-delete {
+  background: var(--delete-btn);
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  border-radius: var(--radius);
+  padding: 0.35rem 1.1rem;
+  transition: background 0.2s;
+}
+.button-delete:hover {
+  background: var(--delete-btn-hover);
+}
+.button-save {
+  background: var(--save-btn);
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  border-radius: var(--radius);
+  padding: 0.45rem 1.3rem;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+.button-save:hover {
+  background: var(--save-btn-hover);
+}
+
+/* Formularios */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.form-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+form > div {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+label {
+  min-width: 110px;
+  font-size: 1rem;
+  color: var(--label);
+  font-weight: 500;
+}
+input, select {
+  font-size: 1rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  outline: none;
+  flex: 1;
+  transition: border 0.2s;
+}
+input:focus, select:focus {
+  border-color: var(--edit-btn);
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 1rem 0.5rem;
+  }
+  .navbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  .navbar-title {
+    margin-right: 0;
+  }
+  th, td {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.95rem;
+  }
+  form > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  label {
+    min-width: 0;
+  }
+}
+
+.button-new {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  border-radius: var(--radius);
+  padding: 0.45rem 1.2rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+  box-shadow: none;
+}
+.button-new:hover {
+  background: #0056b3;
+}
+
+.button-cancel {
+  background: #6c757d;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  border-radius: var(--radius);
+  padding: 0.45rem 1.2rem;
+  font-size: 1rem;
+  margin-left: 0.7rem;
+  margin-top: 1rem;
+  transition: background 0.2s;
+  box-shadow: none;
+}
+.button-cancel:hover {
+  background: #495057;
+}
